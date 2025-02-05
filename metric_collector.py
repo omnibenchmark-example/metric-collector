@@ -16,7 +16,7 @@ def concatenate_input_content(input_files):
     return concatenated_content
 
 
-def aggregate_metrics_mapping(output_dir, metrics_mapping_files, parameters):
+def aggregate_metrics_mapping(output_dir, input_files):
     # Create the output directory if it doesn't exist
     os.makedirs(output_dir, exist_ok=True)
 
@@ -45,12 +45,12 @@ def main():
     parser.add_argument('--metrics.mapping', type=str, nargs='+', help='Metrics mapping file.')
 
     # Parse arguments
-    args, extra_arguments = parser.parse_known_args()
+    args, _ = parser.parse_known_args()
 
     metrics_mapping_files = getattr(args, 'metrics.mapping')
     output_dir = getattr(args, 'output_dir')
 
-    aggregate_metrics_mapping(output_dir, metrics_mapping_files, extra_arguments)
+    aggregate_metrics_mapping(output_dir, metrics_mapping_files)
 
 
 if __name__ == "__main__":
