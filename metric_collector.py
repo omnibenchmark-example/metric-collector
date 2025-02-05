@@ -23,7 +23,7 @@ def aggregate_metrics_mapping(output_dir, input_files):
     content = concatenate_input_content(input_files)
 
     biometrics_tsv = os.path.join(output_dir, 'biometrics.tsv')
-    with open(method_mapping_file, 'w') as file:
+    with open(biometrics_tsv, 'w') as file:
         file.write(content)
 
     biometrics_report_html = os.path.join(output_dir, 'biometrics_report.html')
