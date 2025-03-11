@@ -6,13 +6,7 @@ def concatenate_input_content(input_files):
     
     # Iterate over each input file
     if input_files:
-        for input_file in input_files:
-            # Open each input file in read mode and read its content
-            with open(input_file, 'r') as file:
-                # Read the content of the input file and append it to the concatenated_content string
-                concatenated_content += file.read()
-                # Optionally, you can add a newline between the content of each file
-                concatenated_content += '\n'
+        concatenated_content = "\n".join(input_files)
 
     return concatenated_content
 
